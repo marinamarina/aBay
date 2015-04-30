@@ -1,0 +1,89 @@
+body {
+	font-family: Arial;
+	font-size: 16pt;
+	color: #505050;
+}
+/* jQuery UI issue fix */
+.ui-widget-overlay {
+  background: #000000;
+}
+button {
+	border: 1px solid #CCCCCC;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: helvetica, sans-serif;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  background: #FCBDB6;
+  color: #505050;
+}
+.input, textarea {
+	margin-bottom: 16px;
+}
+#listItemDialog {
+	text-align: center;
+}
+#listItemDialog section {
+	padding: 5px;
+}
+.selected {
+	color: #000000;
+	font-weight: bold;
+}
+img {
+	vertical-align: middle;
+}
+#items, #itemsHeader {
+	width: 70%;
+	border-collapse: none;
+  	text-align: left;
+  	margin: 20px;
+	border-spacing: 10px;
+}
+#items td {
+	padding: 10px; 
+}
+#items tr {
+	background: #E2FEE2;
+}
+#items tr:nth-child(odd){ 
+	background: #BBB753;
+}
+#items tr:nth-child(even){
+		background: #FAE8DA;
+}
+.wide {
+	width: 40%
+}
+.narrow {
+	width: 30%;
+}
+.margin-bottom {
+	margin-bottom: 16px;
+}
+.bordered {
+	border: 1px solid #505050;
+	padding: 16px;
+}
+#listItemDialog input, textarea,
+#itemDetails input, textarea {
+	float: right;
+}
+.detailsEntry {
+	float: right;
+    margin-right: 16px;
+    text-align: left;
+    width: 318px;
+  }
+  .bidInput {
+  	float: right;
+    margin-right: 36px;
+  }
+.clearfix {
+	margin-top: 8px;
+	clear: both;
+}

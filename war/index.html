@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>aBay Application</title>
+		<!-- load the jQuery and other libs -->		
+	  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="script/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="script/jquery-ui-sliderAccess.js"></script>
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+		<link rel="stylesheet" href="css/jquery-ui-timepicker-addon.css" />
+		
+		<!-- load local CSS and JavaScript -->
+ 		<link rel="stylesheet" href="css/index.css" />
+		<script src="script/index.js"></script>		
+	</head>
+	<body>
+		<section>
+			<h1>aBay Online Auction</h1>
+			<!-- buttons for adding an item and refreshing the list of items -->
+			<button id="listItemButton">List An Item</button>
+			<button id="refreshItemsList">Refresh</button>
+			<!-- /buttons for adding an item and refreshing the list of items -->
+
+			<!-- items table header -->
+			<table id="itemsHeader">
+				<tr>
+					<th class="wide">Deadline</th>
+					<th class="narrow">Item</th>
+					<th class="narrow">Current Price</td>
+				</tr>
+			</table>
+			<!-- /items table header -->
+
+			<!-- items table -->
+			<table id="items"></table>
+			<!-- /items table -->	
+		</section>
+		
+		<!-- section for entering details for a new item -->
+		<section id="listItemDialog">
+			<section class="input">
+					<label for="itemSeller">Seller:</label>
+					<input type="text" id="itemSeller" />
+			</section>
+			<section class="input">
+					<label for="itemDeadline">Deadline:</label>
+					<input type="text" name="itemDeadline" id="itemDeadline" value="" />
+					<script>
+						$(function() {
+							console.log(new Date().getFullYear()+ '/' + (parseInt(new Date().getMonth())+1) + '/' + new Date().getDate());
+							$("#itemDeadline").datetimepicker({
+								timeFormat: "hh:mm tt",
+								minDate: new Date()
+							});
+						});
+					</script>
+			</section>
+			<section class="input">
+					<label for="itemTitle">Title:</label>
+					<input type="text" id="itemTitle" />
+			</section>
+			<section class="input">
+					<label for="itemPrice">Starting Price:</label>
+					<input type="text" id="itemPrice" />
+			</section>
+			<section class="input">
+					<label for="itemDesc">Description:</label>
+					<textarea rows="4" id="itemDesc"></textarea>
+			</section>
+			
+			<!-- buttons for saving/cancelling -->
+			<section class="listItemButtons clearfix">
+				<button id="listItem">List</button>
+				<button id="cancelItem">Cancel</button>
+			</section>
+		</section>
+		<!-- /section for entering details for a new item -->
+
+		<!-- section for viewing an item -->
+		<section id="itemDetails" data="">
+		 <fieldset class="margin-bottom">
+			<section class="input">
+					<span>Seller:</span>
+					<span class="detailsEntry" id="itemSellerDetails"></span>	
+			</section>
+			<section class="input">
+					<span>Title:</span>
+					<span class="detailsEntry" id="itemTitleDetails"></span>	
+			</section>
+			<section class="input">
+					<span>Deadline:</span>
+					<span class="detailsEntry" id="itemDeadlineDetails"></span>	
+			</section>
+			<section class="input">
+					<span>Current Price:</span>
+					<span class="detailsEntry" id="itemPriceDetails"></span>	
+			</section>
+			<section class="input">
+					<span>No. of bids:</span>
+					<span id="noBidsDetails">0</span>
+					<span class="detailsEntry" id="winnerDetails"></span>	
+			</section>
+			<section class="input">
+					<span>Description:</span>
+					<p id="itemDescDetails" class="bordered"></p>	
+			</section>
+			<!-- buttons for closing the details dialog -->
+			<section class="itemDetailsButtons clearfix">
+				<button id="closeDetails">Close</button>
+			</section>
+			<!-- /buttons for closing the details dialog -->
+			</fieldset>
+			<fieldset class="margin-bottom">
+				<section class="input">
+						<span>Bidder:</span>
+						<input class="bidInput" id="bidder" />	
+				</section>
+				<section class="input">
+						<span>Amount:</span>
+						<input class="bidInput" id="amount" />	
+				</section>
+				<!-- button for placing a bid -->
+				<section class="bidButton clearfix">
+					<button id="placeBid">Place Bid</button>
+				</section>
+				<!-- /button for placing a bid -->
+			</fieldset>			
+		</section>
+		<!-- /section for viewing an item -->
+	</body>
+</html>
